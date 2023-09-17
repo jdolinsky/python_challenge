@@ -57,8 +57,10 @@ for i in range(len(change)-1):
         min_change = change[i+1]
         min_change_i = i
 
+average_change = round(sum(change)/len(change), 2)
 
-print(f"Total Months: {count_months}")
-print(f"Total: {total_profit_loss}")
-print(f"Greatest Increase in Profits: {months[max_change_i+2]} {max_change}")
-print(f"Greatest Decrease in Profits: {months[min_change_i+2]} {min_change}")
+print(f"Total Months: {count_months} \n")
+print(f"Total: ${total_profit_loss:,} \n")
+print(f"Average Change: ${average_change:,} \n")
+print(f"Greatest Increase in Profits: {months[max_change_i+2]} (${max_change:,}) \n")
+print(f"Greatest Decrease in Profits: {months[min_change_i+2]} (${min_change:,}) \n")
