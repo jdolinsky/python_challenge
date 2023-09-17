@@ -11,7 +11,6 @@ header ="""
       
 --------------------------------------------------------
       """
-print(header)
 # Define a counter for months
 count_months = 0
 # Define a variable for profit/loss
@@ -59,8 +58,18 @@ for i in range(len(change)-1):
 
 average_change = round(sum(change)/len(change), 2)
 
-print(f"Total Months: {count_months} \n")
-print(f"Total: ${total_profit_loss:,} \n")
-print(f"Average Change: ${average_change:,} \n")
-print(f"Greatest Increase in Profits: {months[max_change_i+2]} (${max_change:,}) \n")
-print(f"Greatest Decrease in Profits: {months[min_change_i+2]} (${min_change:,}) \n")
+summary = f"""{header}
+Total Months: {count_months} \n
+Total: ${total_profit_loss:,} \n
+Average Change: ${average_change:,} \n
+Greatest Increase in Profits: {months[max_change_i+2]} (${max_change:,}) \n
+Greatest Decrease in Profits: {months[min_change_i+2]} (${min_change:,}) \n
+"""
+print(summary)
+
+# write results in a .txt file
+f = open("./analysis/myfile.txt", "w")
+f.write(summary)
+f.close()
+
+
